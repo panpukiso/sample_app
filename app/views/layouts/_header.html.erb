@@ -1,0 +1,12 @@
+<header class="navbar fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to "sample app", home_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-right">
+            <li><%= link_to "Home",   home_path , class: "header-list" %></li>
+            <li><%= link_to "Help",   help_path , class: "header-list" %></li>
+            <li><%= link_to "Log in", '#'       , class: "header-list" %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
