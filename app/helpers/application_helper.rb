@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include SessionsHelper
+  
   def full_title(page_title= '')
     basic_title = "Ruby on Rails Tutorial"
     if page_title.empty?

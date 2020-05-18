@@ -5,7 +5,24 @@
           <ul class="nav navbar-right">
             <li><%= link_to "Home",   home_path , class: "header-list" %></li>
             <li><%= link_to "Help",   help_path , class: "header-list" %></li>
-            <li><%= link_to "Log in", '#'       , class: "header-list" %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Users", '#',class: "header-list" %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profile", current_user, class: "dropdown-item header-list" %></li>
+                  <li><%= link_to "Settings", '#', class: "dropdown-item header-list" %></li>
+                  <div class="dropdown-divider"></div>
+                  <li>
+                    <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item header-list"%>
+                  </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Log in", login_path, class: "header-list" %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
