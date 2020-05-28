@@ -1,0 +1,2 @@
+module ActionActivationsHelper
+end
